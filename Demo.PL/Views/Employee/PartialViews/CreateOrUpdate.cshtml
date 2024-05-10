@@ -1,0 +1,93 @@
+﻿@model EmployeeViewModel
+
+@{
+    var Departments = new SelectList(ViewBag.Departments, "Id", "Name");
+}
+
+<table class="table table-striped table-dark">
+    <tr>
+        <td><label asp-for=" @Model.Name" class="col-form-label">Employee Name:</label></td>
+        <td>
+            <input asp-for="@Model.Name" class="form-control" />
+            <span asp-validation-for="@Model.Name" class="text-danger"></span>
+        </td>
+    </tr>
+    <tr>
+        <td><label asp-for=" @Model.Address" class="col-form-label">Employee Address:</label></td>
+        <td>
+            <input asp-for="@Model.Address" class="form-control" />
+            <span asp-validation-for="@Model.Address" class="text-danger"></span>
+        </td>
+    </tr>
+    <tr>
+        <td><label asp-for=" @Model.Email" class="col-form-label">Employee Email:</label></td>
+        <td>
+            <input asp-for="@Model.Email" class="form-control" />
+            <span asp-validation-for="@Model.Email" class="text-danger"></span>
+        </td>
+    </tr>
+    <tr>
+        <td><label asp-for=" @Model.Salary" class="col-form-label" >Employee Salary:</label></td>
+        <td>
+            <input asp-for="@Model.Salary" class="form-control" value="@(Model.Id>0? Model.Salary : string.Empty)" />
+            <span asp-validation-for="@Model.Salary" class="text-danger"></span>
+        </td>
+    </tr>
+    <tr>
+        <td><label asp-for=" @Model.HireDate" class="col-form-label">Employee HireDate:</label></td>
+        <td>
+            <input asp-for="@Model.HireDate" class="form-control" />
+            <span asp-validation-for="@Model.HireDate" class="text-danger"></span>
+        </td>
+    </tr>
+    <tr>
+        <td><label asp-for=" @Model.DepartmentId" class="col-form-label"></label></td>
+        <td>
+            <select asp-for="@Model.DepartmentId" asp-items="Departments" class="form-control">
+                <option>---- Select Departmet ----</option>
+            </select>
+
+            <span asp-validation-for="@Model.DepartmentId" class="text-danger"></span>
+        </td>
+    </tr>
+    <tr>
+        <td><label asp-for="Image" class="col-form-label"></label></td>
+        <td>
+            @if (Model.Id > 0)
+            {
+                <img id="imagePreview" src="~/Files/Images/@Model.ImageUrl" class="img-circle" height="100" width="100" alt="@Model.Name" />
+                <input type="file" asp-for="Image" onchange="hideImagePreview()" />
+            }
+            else
+            {
+                <input type="file" asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            }
+        </td>
+    </tr>
+
+    <tr>
+        <td><label asp-for="@Model.IsActive" class="col-form-label">IsActive :</label></td>
+        <td>
+            <input asp-for="@Model.IsActive" class="form-check-input" />
+            <span asp-validation-for="@Model.IsActive" class="text-danger"></span>
+        </td>
+    </tr>
+   
+ 
+</table>
+
+<script>
+    function hideImagePreview() {
+        $('#imagePreview').hide();
+    }
+</script>
+
+
+@section Scripts {
+
+    <partial name="_ValidationScriptsPartial" />
+   
+}
+
+

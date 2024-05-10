@@ -1,0 +1,39 @@
+﻿@model EmployeeViewModel
+
+<h1>Employee Details</h1>
+<br>
+
+
+
+<table class="table table-striped table-dark" style="width: auto; height: auto;">
+
+    <tr>
+        <td>Name</td>
+        <td><input asp-for="@Model.Name" class="form-control" readonly /></td>
+    </tr>
+    <tr>
+        <td>Address</td>
+        <td><input asp-for="@Model.Address" class="form-control" readonly /></td>
+    </tr>
+    <tr>
+        <td> Email</td>
+        <td><input asp-for="@Model.Email" class="form-control" readonly /></td>
+    </tr>
+    <tr>
+        <td> Salary</td>
+        <td><input asp-for="@Model.Salary" class="form-control" readonly /></td>
+    </tr>
+    <tr>
+        <td> Hiring Date</td>
+        <td><input asp-for="@Model.HireDate" class="form-control" readonly /></td>
+    </tr>
+    <tr>
+        <td> Is Aitve</td>
+        <td><input asp-for="@Model.IsActive" class="form-check-input" disabled /></td>
+    </tr>
+
+</table>
+<br>
+<a asp-action="Index" class="btn btn-dark">Back To List</a>
+
+

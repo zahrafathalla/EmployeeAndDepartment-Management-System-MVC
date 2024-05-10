@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <div class="col-6">
+        <form method="post" enctype="multipart/form-data" asp-action="Create" asp-controller="Employee" class="form-container">
+            <Partial name="PartialViews/CreateOrUpdate" />
+            <div class="button-group">
+                <input type="submit" value="Add" class="btn btn-dark" />
+                <a asp-action="Index" class="btn btn-dark">Back To List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

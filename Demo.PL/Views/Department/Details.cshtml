@@ -1,0 +1,47 @@
+﻿@model DepartmentViewModel
+
+<h1 >Department Details</h1>
+<br>
+
+
+
+<table class="table table-striped table-dark" style="width: auto; height: auto;">
+
+    <tr>
+        <td>Code</td>
+        <td><input asp-for="@Model.Code" class="form-control" readonly /></td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td><input asp-for="@Model.Name" class="form-control" readonly /></td>
+    </tr>
+    <tr>
+        <td>Create At</td>
+        <td><input asp-for="@Model.CreateAt" class="form-control" readonly /></td>
+    </tr>
+</table>
+<br>
+<a asp-action="Index" class="btn btn-dark">Back To List</a>
+
+
+@* <div class="row">
+    <div class="col-6">
+        <div class="form-group">
+             <label asp-for=" @Model.Code" class="col-form-label"></label>
+             <input asp-for="@Model.Code" class="form-control" readonly />             
+        </div>
+        <div class="form-group">
+             <label asp-for=" @Model.Name" class="col-form-label"></label>
+             <input asp-for="@Model.Name" class="form-control" />          
+        </div>
+        <div class="form-group">
+            <label asp-for=" @Model.CreateAt" class="col-form-label"></label>
+            <input asp-for="@Model.CreateAt" class="form-control" />
+        </div>
+        <br />
+            <div class="button-group">              
+                <a asp-action="Index" class="btn btn-light">Back To List</a>
+            </div>
+       
+    </div>
+</div> *@
